@@ -5,7 +5,8 @@ using UnityEngine;
 public class MouseLoop : MonoBehaviour
 {
 
-    public float mouseSnsitivity = 100f;
+    public float mouseSensitivity = 100f;
+    public float minXAngle = -70f, maxXAngle = 80f;
     public Transform playerBody;
     private float xRotation = 0f;
 
@@ -26,6 +27,24 @@ public class MouseLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MouseLookAround();
+
+    }
+
+    private void MouseLookAround()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, minXAngle, maxXAngle);
+
+        transform.localRotation = Quaternion.Euler(mouseY, 0, 0);
+        playerBody.Rotate(Vector3.up * mouseX);
+
         
+
     }
 }
