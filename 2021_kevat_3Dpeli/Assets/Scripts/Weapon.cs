@@ -8,6 +8,9 @@ public class Weapon : MonoBehaviour
     public GameObject heittoObjektiPrefab;
     private Camera FPSCamera;
 
+    public Transform heittoPiste;
+    public FireArm fireArm;
+
 
 
     // Start is called before the first frame update
@@ -22,20 +25,65 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire2")){
 
             Heitto();
         }
 
+
+        if (Input.GetButtonDown("Fire1")){
+
+            Ammu();
+
+
+
+        }
+
+
+
+
     }
+        
+
+
+        
 
     private void Heitto()
     {
-        GameObject obj = Instantiate(heittoObjektiPrefab, transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(heittoObjektiPrefab, heittoPiste.position, Quaternion.identity);
         obj.GetComponent<Rigidbody>().AddForce(FPSCamera.transform.forward * heittoVoima);
 
 
     }
 
+    public void Ammu()
+    {
+
+        if (fireArm != null){
+
+            fireArm.Fire();
+
+        }
+
+        else
+        {
+            print("Asetta ei ole asetettu");
+
+
+        }
+
+
+    }
+
+    public void setFireArm(FireArm newfirearm)
+    {
+        fireArm = newfirearm;
+
+
+
+    }
 
 }
+
+
+
