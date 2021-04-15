@@ -33,6 +33,19 @@ public class FireArm : MonoBehaviour
     public void Fire() {
         print("Ampuu sarjaa");
 
+        RaycastHit hit;
+            if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range)){
+
+                if(hit.collider.GetComponent<ITakeDamage<float>>() != null){
+
+                    hit.collider.GetComponent<ITakeDamage<float>>().Damage(attackPower);
+                }
+
+
+
+
+            }
+
 
 
 
