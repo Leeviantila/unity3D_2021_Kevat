@@ -39,9 +39,12 @@
      <Compile Include="Assets\Scripts\FireArm.cs" />
      <Compile Include="Assets\Scripts\InterFace.cs" />
      <Compile Include="Assets\Scripts\MouseLoop.cs" />
+     <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\PLayerMovement.cs" />
+     <Compile Include="Assets\Scripts\RigibodyInteract.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\journal.cs" />
+     <Compile Include="Assets\Scripts\playerInteract.cs" />
      <Compile Include="Assets\Scripts\testi.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

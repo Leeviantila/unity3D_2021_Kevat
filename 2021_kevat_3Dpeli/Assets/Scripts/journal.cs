@@ -9,6 +9,10 @@ public class journal : MonoBehaviour
 {
 
     public static journal Instance;
+    public TMP_Text textBox;
+    public GameObject textBoxImage;
+    public float textFadeOutDuration = 1f;
+    private float countDown;
 
 
     void Awake()
@@ -24,7 +28,7 @@ public class journal : MonoBehaviour
 
         }
 
-
+        DisableTextBox();
 
     }
 
@@ -40,6 +44,38 @@ public class journal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(textBoxImage.activeSelf)
+        {
+            countDown -= Time.deltaTime;
+
+            if(countDown <= 0)
+            {
+                DisableTextBox();
+
+
+            }
+        }
+
         
     }
+
+
+    public void Log(string text) {
+            textBoxImage.SetActive(true);
+            textBox.text = text;
+            countDown = textFadeOutDuration;
+
+
+    }
+
+    private void DisableTextBox() {
+        
+        textBox.text = "";
+        textBoxImage.SetActive(false);
+
+
+    }
+
+
+
 }

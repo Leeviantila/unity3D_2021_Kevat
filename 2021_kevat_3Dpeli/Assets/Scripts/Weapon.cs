@@ -132,6 +132,7 @@ public class Weapon : MonoBehaviour
 
                 firearms[i].gameObject.SetActive(true);
                 fireArm = firearms[i].GetComponent<FireArm>();
+                journal.Instance.Log(fireArm.weponName);
 
             }
 

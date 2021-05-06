@@ -5,6 +5,7 @@ using UnityEngine;
 public class testi : MonoBehaviour, ITakeDamage<float>, IDie, IInteractable
 {
 
+    public string objName = "enemy";
     public float health = 5;
     bool isAlive = true;
     public void Damage(float Damage)
@@ -43,11 +44,13 @@ public class testi : MonoBehaviour, ITakeDamage<float>, IDie, IInteractable
 
     public void Interact()
     {
-        throw new System.NotImplementedException();
+        journal.Instance.Log($"Object name is {objName} and it has {health} hp.");
+
+
     }
 
     public void TakeDamage(){
-        //print("minuun osui");
+        print("minuun osui");
     }
 
 
