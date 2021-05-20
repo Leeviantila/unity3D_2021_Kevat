@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DoorController.cs" />
      <Compile Include="Assets\Scripts\FireArm.cs" />
      <Compile Include="Assets\Scripts\InterFace.cs" />
      <Compile Include="Assets\Scripts\MouseLoop.cs" />
